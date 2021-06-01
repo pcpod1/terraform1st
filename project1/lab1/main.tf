@@ -20,7 +20,7 @@ module "web-vm" {
   NIC_name = var.NIC_name
   vm_name = var.VM_name
   subnet_id = azurerm_subnet.backend1.id
-  admin_password = "Spider@123"
+  admin_password = data.azurerm_key_vault_secret.volt.value
   location = azurerm_resource_group.project.location
   name = azurerm_resource_group.project.name
   ip_name = "public123"

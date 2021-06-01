@@ -20,7 +20,7 @@ module "test-vm" {
   NIC_name = var.NIC_name1
   vm_name = var.VM_name1
   subnet_id = azurerm_subnet.front.id
-  admin_password = "Spider@123"
+  admin_password = data.azurerm_key_vault_secret.volt.value
   location = azurerm_resource_group.project-test.location
   name = azurerm_resource_group.project-test.name
   ip_name = "private123"
